@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Reset the password</title>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" type="text/css" href="style (4).css">
+	</head>
+	<body>
+	<div class="container">
+	<div class="box">
+		<form action="/action_page.php" method="get" onsubmit="return matchpass()">
+			<h1>Reset Password</h1><br>
+			<label>
+				New Password : <input type="password" name="passw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" required><br>
+			</label>
+			<label>
+				Confirm Password : <input type="password" name="passw2" required></br>
+			</label>
+			<button type="button" class="submit">Submit</button>
+			
+		</form>
+		</div>
+			</div>
+	</body>
+	<script>
+		function matchpass(){
+			var firstpassword = document.f1.passw.value;
+			var secondpassword= document.f1.passw2.value;
+			if (secondpassword== firstpassword){
+			return true;
+			}
+			else{
+			alert("password must be same!");
+			return false;
+			}}
+	</script>
+</html>

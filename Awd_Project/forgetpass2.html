@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+	<head>
+	<title>Forget the password</title>
+  <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" type="text/css" href="style (4).css">
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script>
+  $("#myform").validate({
+            rules: {
+			field: {
+			required: true,
+			email: true
+			}
+			}
+			});	
+  </script>
+	</head>
+	
+	<body>
+	<div class="container">
+	<div class="background-img">
+	<div class="box">
+	
+	<form id="myform" action="/action_page.php" method="post">
+	<h2 style="text-align: center">Forget Password</h2><br><br>
+	<label>
+	Email <input type="email" name="email" required><br><br><br>
+</label>
+     
+	 <label>
+	 <a href="resetpass.html"><button type="button" class="submit">Submit</button></a>
+	 </label>
+	 <label>
+	 
+	 </label>
+	</form>
+	</div>
+	</div>
+	</div>
+	</body>
+</html>

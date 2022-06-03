@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login & Registration Form</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="style (1).css">
+  <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700,800&display=swap" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+  <div class="cont">
+    <div class="form sign-in">
+      <h2>Sign In</h2>
+	  <form onsubmit="return matchpass" onsubmit="return matchemail" action="/action_page.php" method="post">
+	 <label><span> Email</span> <input type="email" name="email2" required></label><br>
+	 <label><span>Password</span><input type="password" name="password2" required></label>
+	  <label>
+	 <a href="forgetpass2.html"><button type="button">Forgot Password</button></a>
+	  </label>
+     <button class="submit" type="button">Sign In</button>
+     </form>
+
+      <div class="social-media">
+        <ul>
+          <li><a href="https://www.facebook.com/"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtdJfoqoUdMh_FiJNqzzj8opDDuBdD8D6HUg&usqp=CAU"></a></li>
+          <li><a href="https://twitter.com/i/flow/login?input_flow_data=%7B%22requested_variant%22%3A%22eyJsYW5nIjoiZW4ifQ%3D%3D%22%7D"><img src="https://www.freepnglogos.com/uploads/512x512-logo/512x512-transparent-logo-download-twitter-png-transparent-image-and-clipart-8.png"></a></li>
+          <li><a href="https://in.linkedin.com/"><img src="https://www.freepnglogos.com/uploads/linkedin-logo-transparent----6.png"></a></li>
+          <li><a href="http://www.instagram.com
+"><img src="https://www.freepnglogos.com/uploads/instagram-logo-png-transparent-background-hd-3.png"></a></li>
+        </ul>
+      </div>
+    </div>	
+
+    <div class="sub-cont">
+      <div class="img">
+        <div class="img-text m-up">
+          <h1>Resume Builder</h1>
+          <p>sign up and discover</p>
+        </div>
+        <div class="img-text m-in">
+          <h1>Resume Builder</h1>
+          <p>just sign in</p>
+        </div>
+        <div class="img-btn">
+          <span class="m-up">Sign Up</span>
+          <span class="m-in">Sign In</span>
+        </div>
+      </div>
+      <div class="form sign-up">
+        <h2>Sign Up</h2>
+		<form name="myform" onsubmit="return validateform()" onsubmit="return matchpass()" onsubmit="return checknum()" action="/action_page.php" method="post">
+		Name:  <input type="text" name="name" required></br>
+		Password:  <input type="password" name="password" placeholder="123abcABC"  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" ></br>
+		Re-enter Password:  <input type="password" name="password2" required></br>
+		Email: <input type="email" name="email" required >
+		
+		<button type="submit" class="submit" value="register">Sign Up Now</button>
+		</form>
+       
+      </div>
+    </div>
+  </div>
+  <script>
+			
+			function validateform(){
+			var name = document.myform.name.value;
+			var password = document.myform.password.value;
+			if(name== null|| name=="" || name.length<3){
+			alert("Name can't be blank and it must be atleast 3 alphabet long");
+			return false;
+			}
+			else if(password.length<8 ){
+			alert("Password must be atleast 8 character long");
+			return false;
+			}
+			
+			}
+			function matchpass(){
+			var firstpassword = document.f1.password.value;
+			var secondpassword= document.f1.password2.value;
+			if (secondpassword== firstpassword){
+			return true;
+			}
+			else{
+			alert("password must be same!");
+			return false;
+			}}
+			function matchemail(){
+			var firstemail= document.f1.email.value;
+			var secondemail= document.f1.email2.value;
+			if(secondemail==firstemail)
+			{
+			return true;}
+			else{
+			alert("Please enter the valid email!");
+			return false;}
+			}
+			$("#myform").validate({
+            rules: {
+			field: {
+			required: true,
+			email: true
+			}
+			}
+			});
+		</script>
+<script type="text/javascript" >document.querySelector('.img-btn').addEventListener('click', function()
+	{
+		document.querySelector('.cont').classList.toggle('s-signup')
+	}
+);</script>
+</body>
+</html>
